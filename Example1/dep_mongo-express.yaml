@@ -30,10 +30,8 @@ spec:
                 secretKeyRef:
                   name: mongo-secrets
                   key: mongodb-pass 
-            - name: ME_CONFIG_MONGODB_PORT
+            - name: ME_CONFIG_MONGODB_SERVER
               valueFrom:
                 configMapKeyRef:
                   name: mongo-configmaps
-                  key: mongodb-port
-            - name: ME_CONFIG_MONGODB_SERVER
-              value: "27017"
+                  key: mongodb-url
