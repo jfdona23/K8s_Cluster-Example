@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: mongo-configmaps
 data:
-  mongodb-url: mongo-db_service
+  mongodb-url: mongo-db-service
   mongodb-port: "27017"
