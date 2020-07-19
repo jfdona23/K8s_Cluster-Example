@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: mongo-db_deployment
+  labels:
+    tier: backend
+spec:
+  replicas: 1
+    selector:
+      matchLabels:
+        app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+        - name: mongo-db_container
+          image: mongo
+          ports:
+          - containerPorts: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secrets
+                  key: mongodb-user 
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secrets
+                  key: mongodb-pass 

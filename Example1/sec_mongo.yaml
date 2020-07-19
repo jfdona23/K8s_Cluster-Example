@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: secret
+metadata:
+  name: mongo-secrets
+type: opaque
+data:
+  mongodb-user: bXlTdXBlclVzZXI=
+  mongodb-pass: bXlTdXBlckR1cGVyUGFzc3dvcmQxMjM=

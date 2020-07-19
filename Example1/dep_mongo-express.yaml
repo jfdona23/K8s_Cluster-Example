@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: mongo-express_deployment
+  labels:
+    tier: frontend
+spec:
+  replicas: 1
+    selector:
+      matchLabels:
+        app: mongoexpress
+  template:
+    metadata:
+      labels:
+        app: mongoexpress
+    spec:
+      containers:
+        - name: mongo-express_container
+          image: mongo-express
+          ports:
+          - containerPorts: 8081
+          env:
+            - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secrets
+                  key: mongodb-user 
+            - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secrets
+                  key: mongodb-pass 
+            - name: ME_CONFIG_MONGODB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-configmaps
+                  key: mongodb-port
+            - name: ME_CONFIG_MONGODB_SERVER
+              value: 27017
