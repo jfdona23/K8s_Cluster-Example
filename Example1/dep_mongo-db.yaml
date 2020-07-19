@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-db_deployment
+  name: mongo-db-deployment
   labels:
     tier: backend
 spec:
   replicas: 1
-    selector:
-      matchLabels:
-        app: mongodb
+  selector:
+    matchLabels:
+      app: mongodb
   template:
     metadata:
       labels:
         app: mongodb
     spec:
       containers:
-        - name: mongo-db_container
+        - name: mongo-db-container
           image: mongo
           ports:
-          - containerPorts: 27017
+          - containerPort: 27017
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:

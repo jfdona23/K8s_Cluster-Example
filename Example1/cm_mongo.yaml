@@ -4,4 +4,4 @@ metadata:
   name: mongo-configmaps
 data:
   mongodb-url: mongo-db_service
-  mongodb-port: 27017
+  mongodb-port: "27017"
