@@ -18,7 +18,7 @@ spec:
       - name: docker-secrets
       containers:
       - name: hello-py
-        image: jfdon23/hello-py
+        image: docker.io/jfdon23/hello-py:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
