@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: redis-server
-      spec:
-        containers:
-          - name: redis-server
-            image: redis
-            ports:
-            - containerPort: 6379
+    spec:
+      containers:
+        - name: redis-server
+          image: redis
+          ports:
+          - containerPort: 6379
