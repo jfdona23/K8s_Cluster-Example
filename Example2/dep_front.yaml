@@ -15,16 +15,16 @@ spec:
         app: hello-py
     spec:
       imagePullSecrets:
-        - name: docker-secrets
-          containers:
-        - name: hello-py
-          image: jfdon23/hello-py
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 8000
-          env:
-            - name: REDIS_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: redis-host
-                  key: redis-server
+      - name: docker-secrets
+      containers:
+      - name: hello-py
+        image: jfdon23/hello-py
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: redis-host
+              key: redis-server
