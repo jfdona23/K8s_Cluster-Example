@@ -9,22 +9,22 @@ spec:
   selector:
     matchLabels:
       app: hello-py
-    template:
-      metadata:
-        labels:
-          app: hello-py
-        spec:
-          imagePullSecrets:
-            - name: docker-secrets
+  template:
+    metadata:
+      labels:
+        app: hello-py
+    spec:
+      imagePullSecrets:
+        - name: docker-secrets
           containers:
-            - name: hello-py
-              image: jfdon23/hello-py
-              imagePullPolicy: Always
-              ports:
-              - containerPort: 8000
-            envs:
-                - name: REDIS_HOST
-                  valueFrom:
-                    configMapKeyRef:
-                      name: redis-host
-                      key: redis-server
+        - name: hello-py
+          image: jfdon23/hello-py
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 8000
+          envs:
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: redis-host
+                  key: redis-server
