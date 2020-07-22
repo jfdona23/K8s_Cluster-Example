@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellopy-deployment
+  labels:
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-py
+    template:
+      metadata:
+        labels:
+          app: hello-py
+        spec:
+          imagePullSecrets:
+            - name: docker-secrets
+          containers:
+            - name: hello-py
+              image: jfdon23/hello-py
+              imagePullPolicy: Always
+              ports:
+              - containerPort: 8000
+            envs:
+                - name: REDIS_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      name: redis-host
+                      key: redis-server

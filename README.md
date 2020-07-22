@@ -8,7 +8,7 @@ Kubernetes Cluster Example 1:
 
 Kubernetes Cluster Example 2:
 * Backend: Redis Server.
-* Frontend: Simple website made with Python + Tornado. Source code [here](https://github.com/jfdona23/DevOps-Challenge/tree/Docker_Version) (credits to CPS team from Tradebyte GmbH). Docker image [here](https://hub.docker.com/_/python).
+* Frontend: Simple website made with Python + Tornado. Source code [here](https://github.com/jfdona23/DevOps-Challenge/tree/Docker_Version) (credits to CPS team from Tradebyte GmbH).
 * Secrets and ConfigMaps.
 * Ingress with GCE Ingress Controller.
 
