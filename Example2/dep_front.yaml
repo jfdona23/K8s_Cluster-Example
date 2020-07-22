@@ -26,5 +26,5 @@ spec:
         - name: REDIS_HOST
           valueFrom:
             configMapKeyRef:
-              name: redis-host
-              key: redis-server
+              name: cm-front
+              key: redis-host
