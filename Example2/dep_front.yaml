@@ -28,3 +28,8 @@ spec:
             configMapKeyRef:
               name: cm-front
               key: redis-host
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: cm-front
+              key: environment

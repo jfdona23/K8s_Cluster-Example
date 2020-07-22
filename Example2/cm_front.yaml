@@ -4,3 +4,4 @@ metadata:
   name: cm-front
 data:
   redis-host: redis-server
+  environment: PROD
