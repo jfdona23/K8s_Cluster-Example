@@ -24,5 +24,5 @@ spec:
           servicePort: 80
       - path: /other(/|$)(.*)
         backend:
-          serviceName: hello-py
+          serviceName: nginx-ingress-default-backend
           servicePort: 80
