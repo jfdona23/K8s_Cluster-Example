@@ -14,7 +14,15 @@ spec:
   - host: hello-py.com
     http:
       paths:
+      - path: /
+        backend:
+          serviceName: hello-py
+          servicePort: 80
       - path: /hello
+        backend:
+          serviceName: hello-py
+          servicePort: 80
+      - path: /other(/|$)(.*)
         backend:
           serviceName: hello-py
           servicePort: 80
