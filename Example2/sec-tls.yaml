@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tls-secret
+data:
+  tls.crt: ${{ secrets.TLS_TEST_CERT }}
+  tls.key: ${{ secrets.TLS_TEST_KEY }}
+type: kubernetes.io/tls
